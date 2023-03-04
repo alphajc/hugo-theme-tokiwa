@@ -1,6 +1,6 @@
 	<div class="pb-4">
 		<h1 >
-			<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="heading font-cursive icon">{{ .Site.Title }}</a>
+			<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="heading font-cursive icon">{{if .Site.Params.Logo}}<img src="{{ .Site.Params.Logo }}" class="icon"></img>{{else}}{{ .Site.Title }}{{end}}</a>
 		</h1>
 	</div>
 	{{ partial "site-navigation.html" . }}
