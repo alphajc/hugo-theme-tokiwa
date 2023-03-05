@@ -4,7 +4,7 @@
 		{{- .Content -}}
 	</section>
 	<section>
-		{{ range (.Paginator 25).Pages.GroupByDate "2006" }}
+		{{ range (.Paginate .RegularPagesRecursive).Pages.GroupByDate "2006" }}
 		<hr class="p-0 pt-4 m-0" />
 		<section class="flex flex-col md:flex-row items-start items-baseline">
 			<div class="md:pl-4 pb-2 md:sticky top-0 order-1 pr-6">
@@ -27,18 +27,6 @@
 			</ul>
 		</section>
 		{{ end }}
-		<!-- {{ range .Paginator.Pages }}
-		<div>
-			<div>
-				<a href="{{ .Permalink }}">
-					{{ .Title }}
-				</a>
-			</div>
-			{{ with .Description }}
-			<div>{{.}}</div>
-			{{ end }}
-		</div>
-		{{ end }} -->
 	</section>
 </article>
 {{ end }}
