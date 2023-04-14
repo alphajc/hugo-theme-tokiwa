@@ -5,7 +5,8 @@
 <div class="md:max-w-xs  flex flex-col md:items-end pt-2">
 	{{ partial "social-follow.html" . }}
 	<div class="a-gray text-sm text-gray-500 leading-tight">
-		{{.Site.Copyright|safeHTML}}
+		{{ if .Site.Params.record }}<a href="https://beian.miit.gov.cn">{{.Site.Params.Record|safeHTML}}</a>{{ end  }}
+		<br />{{.Site.Copyright|safeHTML}}
 		<br />
 		Built with Hugo and theme <a 
 			href="https://github.com/alphajc/hugo-theme-tokiwa">Tokiwa</a>.
